@@ -9,6 +9,7 @@ import smtplib
 print("Initializing WBR...")
 
 MASTER = 'Nick'
+
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[0].id)
@@ -33,7 +34,7 @@ def wishMe():
     speak('I am WBR... How may I help you?')
 
 
-# this command takes command from microphone
+# this command takes command from microphone 
 def takeCommand():
     r = sr.Recognizer()
     with sr.Microphone() as source:
@@ -56,7 +57,7 @@ wishMe()
 query = takeCommand()
 
 # logic for executing tasks
-if 'wikipedia' in query.lower(): # wuery lower as it detect voice as lower case
+if 'wikipedia' in query.lower(): # query lower as it detect voice as lower case
         speak('Searching wikipedia..')
         query = query.replace('wikipedia',"")
         results = wikipedia.summary(query, sentences =2)
